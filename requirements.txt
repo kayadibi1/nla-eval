@@ -1,0 +1,16 @@
+# Pinned to the versions used in the original RunPod H100 run (CUDA 12.8 driver).
+# torch and sglang are the most fragile pins; CUDA 13 wheels segfaulted in the
+# original environment and the working combination was torch+cu128 / sglang 0.5.6.
+
+torch==2.4.1+cu128
+sglang[all]==0.5.6
+transformers>=4.45,<5.0
+tokenizers>=0.20
+accelerate>=0.34
+pyarrow>=15.0
+pandas>=2.2
+numpy>=1.26
+scipy>=1.13
+pyyaml>=6.0
+huggingface_hub>=0.24
+datasets>=2.20
