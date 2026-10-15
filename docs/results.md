@@ -89,6 +89,8 @@ Bonferroni α = 0.05/15 = 0.0033.  Cohen's d shown for the requested A↔E1, A�
 
 ## Cross-model side-by-side
 
+> Status note (added 15 October 2026): the ABC levels in this table cannot be compared across the two models. See the note at the top of the README.
+
 - Qwen mean_pairwise_cos(gold)  = 0.4969
 - Gemma mean_pairwise_cos(gold) = 0.9746
 

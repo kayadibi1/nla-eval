@@ -1,12 +1,12 @@
 # nla-eval
 
-Interpretability evaluation of released Natural Language Autoencoder checkpoints: **anisotropy-corrected metrics, cross-model comparison, honestly published negative results.**
+Interpretability evaluation of released Natural Language Autoencoder checkpoints: **anisotropy-corrected metrics, a within-model tier comparison and a published negative result.**
+
+> **Status note (added 15 October 2026).** The comparison between the two models in this work was withdrawn on 11 May 2026. After the NLA paper's lead author replied, it was clear that the paper's own metric, fraction of variance explained (FVE), already handles the anisotropy problem. ABC subtracts each model's mean pairwise cosine. That shifts the mean but does not equalise variance, so the Qwen and Gemma ABC levels below cannot be read against each other. Two results stand: the tier pattern inside each model and the Phase 2 null. An account of the project, including this mistake, is at [Renting an H100 to Actually Run Interpretability](https://sidaraslanoglu.substack.com/p/renting-an-h100-to-actually-run-interpretability).
 
 Code companion to **Zenodo dataset [10.5281/zenodo.20112029](https://doi.org/10.5281/zenodo.20112029)**.
 
-![NLA reconstruction quality by input tier](docs/img/abc-chart.png)
-
-> **Key findings:** NLA reconstruction quality varies dramatically by base model (Qwen ABC +0.25–0.41 vs Gemma +0.01–0.02 across all tiers). Cross-model rank correlation ρ = +0.354 (p = 3.24e-16); input difficulty transfers. Phase 2 is a clean negative result: 3-shot bias flipped 0/30 answers on both models, making Turpin-style unfaithfulness undefined for this prompt set.
+> **Key findings:** Within each model, fluent jailbreak prompts (Tier E2) reconstruct better than structural gibberish (Tier E1): Cohen's d = −3.31 on Qwen and −1.19 on Gemma. JailbreakBench's templated phrasing may explain part of this. Phase 2 is a clean negative result: 3-shot bias flipped 0/30 answers on both models, making Turpin-style unfaithfulness undefined for this prompt set.
 
 An empirical evaluation pipeline for the released Natural Language Autoencoder (NLA) interpretability checkpoints from Fraser-Taliente et al. (2026), applied to two open base models: **Qwen2.5-7B-Instruct** (extraction layer 20) and **Gemma-3-12B-IT** (extraction layer 32). Reproduces a 500-input cross-tier reconstruction calibration (Phase 1) and a 60-input chain-of-thought (CoT) unfaithfulness probe (Phase 2) on a single H100 GPU.
 
@@ -28,7 +28,7 @@ Anisotropy gap (relevant because raw MSE is **not** directly comparable across t
 | Qwen2.5-7B-Instruct | 0.4969 | 20 | 3584 |
 | Gemma-3-12B-IT | 0.9746 | 32 | 3840 |
 
-Phase 1 ABC by tier (anisotropy-corrected; same vertical axis for both models):
+Phase 1 ABC by tier (anisotropy-corrected). Read each column on its own. The two columns are not comparable (see the status note):
 
 | Tier | n | Qwen ABC | Gemma ABC |
 |---|---|---|---|
