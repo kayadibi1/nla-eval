@@ -2,7 +2,7 @@
 
 Interpretability evaluation of released Natural Language Autoencoder checkpoints: **anisotropy-corrected metrics, a within-model tier comparison and a published negative result.**
 
-> **Status note (added 15 October 2026).** The comparison between the two models in this work was withdrawn on 11 May 2026. After the NLA paper's lead author replied, it was clear that the paper's own metric, fraction of variance explained (FVE), already handles the anisotropy problem. ABC subtracts each model's mean pairwise cosine. That shifts the mean but does not equalise variance, so the Qwen and Gemma ABC levels below cannot be read against each other. Two results stand: the tier pattern inside each model and the Phase 2 null. An account of the project, including this mistake, is at [Renting an H100 to Actually Run Interpretability](https://sidaraslanoglu.substack.com/p/renting-an-h100-to-actually-run-interpretability).
+> **Status note (added 15 October 2026).** The comparison between the two models in this work was withdrawn on 11 May 2026. After the NLA paper's lead author replied, it was clear that the paper's own metric, fraction of variance explained (FVE), already handles the anisotropy problem. ABC subtracts each model's mean pairwise cosine. That shifts the mean but does not equalise variance, so the Qwen and Gemma ABC levels below cannot be read against each other. Two results stand: the tier pattern inside each model and the Phase 2 null.
 
 Code companion to **Zenodo dataset [10.5281/zenodo.20112029](https://doi.org/10.5281/zenodo.20112029)**.
 
