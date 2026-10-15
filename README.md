@@ -135,7 +135,7 @@ Code in this repository was written with **Claude Code (Anthropic) as the primar
 If you use any part of this work, please cite the Zenodo dataset:
 
 ```
-Aslanoğlu, Sidar. (2026). Anisotropy and Cross-Model Comparison of Released
+Aslanoğlu, Sidar. (2026). Anisotropy-Corrected Evaluation of Released
 Natural Language Autoencoders [Data set]. Zenodo.
 https://doi.org/10.5281/zenodo.20112029
 ```
